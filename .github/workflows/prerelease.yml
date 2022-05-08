@@ -18,3 +18,13 @@ jobs:
         uses: ComunidadAylas/PackSquash-action@v2
         with:
           path: pack
+          artifact_name: pack.zip
+      - name: Release on Github
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Automatic Package Build"
+          files: |
+            pack.zip
