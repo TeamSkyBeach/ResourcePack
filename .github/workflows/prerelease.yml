@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - "main"
+    paths:
+      - "pack/**"
 
 jobs:
   pre-release:
