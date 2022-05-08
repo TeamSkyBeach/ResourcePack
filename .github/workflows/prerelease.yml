@@ -27,4 +27,4 @@ jobs:
           prerelease: true
           title: "Automatic Package Build"
           files: |
-            pack.zip
+            /var/lib/packsquash/pack.zip
