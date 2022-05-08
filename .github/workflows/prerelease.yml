@@ -18,7 +18,11 @@ jobs:
         uses: ComunidadAylas/PackSquash-action@v2
         with:
           path: pack
-          artifact_name: pack.zip
+          artifact_name: pack
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: pack
       - name: Release on Github
         uses: marvinpinto/action-automatic-releases@latest
         with:
@@ -27,4 +31,4 @@ jobs:
           prerelease: true
           title: "Automatic Package Build"
           files: |
-            /var/lib/packsquash/pack.zip
+            pack.zip
